@@ -69,7 +69,7 @@ module EJS
 
       def replace_escape_tags!(source, options)
         source.gsub!(options[:escape_pattern] || escape_pattern) do
-          "',(''+(#{js_unescape!($1)}))#{escape_function},'"
+          "',__(#{js_unescape!($1)}),'"
         end
       end
 
